@@ -1007,6 +1007,7 @@ RESPONSIVE
         margin-top: 20px !important;
         position: sticky; /* Disable sticky on mobile */
         top: 20px;
+        border-radius: 24px;
     }
 
     .italiana {
@@ -1030,6 +1031,7 @@ RESPONSIVE
 
     /* About Section */
     .about-section {
+        min-height: 60vh;
         margin-top: 0;
         padding: 10px;
     }
@@ -1038,7 +1040,7 @@ RESPONSIVE
         width: 100%;
         height: auto;
         border-radius: 24px;
-        padding: 10px 20px;
+        padding: 10px 10px;
     }
 
     .about-card::before {
