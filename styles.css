@@ -239,7 +239,7 @@ body {
 .cards-container {
     position: relative;
     width: 100%;
-    padding-top: 100px; /* Espacio visual para que las cards no tapen el título inmediatamente */
+    padding-top: 0px; /* Espacio visual para que las cards no tapen el título inmediatamente */
 }
 
 .cards-wrapper {
@@ -250,12 +250,12 @@ body {
 }
 
 .card {
-    width: 32vw;   
-    height: 550px;
-    border-radius: 12px;
+    width: 33vw;   
+    height: 100vh; /* Altura completa del viewport */
+    border-radius: 0px;
     overflow: hidden;
     position: sticky; /* La magia del sticky */
-    top: 70px; /* Se pegan a esta altura del viewport */
+    top: 0px; /* Se pegan a esta altura del viewport */
     cursor: none;
     transition: transform 0.3s ease;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -263,36 +263,35 @@ body {
 }
 
 .italiana {
-    margin-left: 1vw;
+    margin-left: 0vw;
     z-index: 1;
 }
 
 .española {
-    margin-left: 34vw;
+    margin-left: 33vw;
     margin-top: 10vh; /* Espacio vertical antes de aparecer */
     z-index: 2;
 }
 
 .adicionales {
-    margin-left: 67vw;
+    margin-left: 66vw;
     margin-top: 10vh; /* Espacio vertical antes de aparecer */
     z-index: 3;
 }
 
-.card:hover {
-    transform: scale(1.02);
-}
+
 
 .card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: brightness(0.6);
-    transition: filter 0.3s ease;
+    transition: all 2s ease;
 }
 
 .card:hover img {
     filter: brightness(0.7);
+    transform: scale(1.1);
 }
 
 .card-content {
@@ -300,23 +299,25 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 40px;
+    padding: 40px   0px 80px 20px;
     color: white;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
 }
 
 .card-content h3 {
-    font-size: 2rem;
+    font-size: 2.7rem;
     font-weight: 700;
     margin-bottom: 40px;
     font-family: 'Playfair Display', serif;
+    text-shadow: #1a1a1a 2px 2px 8px;
 }
 
 .card-content p {
-    font-size: 16px;
+    font-size: 1.5rem;
     opacity: 0.9;
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
+    text-shadow: #1a1a1a 2px 2px 8px;
 }
 
 .card-btn {
@@ -325,7 +326,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.6);
     color: white;
     border-radius: 50px;
-    font-size: 14px;
+    font-size: 1.2rem;
     font-weight: 500;
     cursor: none;
     transition: all 0.3s ease;
@@ -347,7 +348,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -40px;  
+    margin-top: -80px;  
     background-image: url('https://images.unsplash.com/photo-1529154036614-a60975f5c760?w=1600&q=80');
     background-attachment: fixed;
     background-position: center;
