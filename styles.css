@@ -347,7 +347,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -70px;  
+    margin-top: -40px;  
     background-image: url('https://images.unsplash.com/photo-1529154036614-a60975f5c760?w=1600&q=80');
     background-attachment: fixed;
     background-position: center;
