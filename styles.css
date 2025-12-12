@@ -1022,6 +1022,9 @@ RESPONSIVE
 
     .card-content {
         padding: 20px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .card-content h3 {
@@ -1087,6 +1090,9 @@ RESPONSIVE
         width: 100%; /* Asegura que no exceda el grid */
         position: sticky;
         top: 20px;
+    }
+    .custom-cursor{
+        display: none;
     }
 
     /* Testimonials & Contact */
