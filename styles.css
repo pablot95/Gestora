@@ -72,6 +72,32 @@ body {
 .nav {
     display: flex;
     gap: 40px;
+    align-items: center; /* Align items vertically */
+}
+
+/* Language Switcher */
+.lang-switch {
+    display: flex;
+    gap: 10px;
+    margin-right: 0px;
+    align-items: center;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid var(--dark);
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: none; /* Match custom cursor */
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    color: var(--dark);
+}
+
+.lang-btn:hover, .lang-btn.active {
+    background: var(--dark);
+    color: white;
 }
 
 .nav a {
@@ -116,10 +142,7 @@ body {
     position: absolute;
     inset: 0;
     z-index: 2;
-    background: linear-gradient(90deg,
-        rgba(0,123,64,0.4) 0%,
-        rgba(255, 255, 255, 0.3) 50%,
-        rgba(206,43,55,0.4) 100%);
+    background: #37373749;
 }
 
 .hero-inner {
@@ -138,8 +161,8 @@ body {
     color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .hero h1 {
@@ -153,8 +176,8 @@ body {
 }
 
 .hero p {
-    color: rgba(255,255,255,0.9);
-    margin: 40px;
+    color: rgba(255,255,255,0.9);   
+    margin: 40px 0px;
     font-size: 18px;
     text-shadow: #0f1115 2px 2px 8px;
 }
@@ -219,14 +242,6 @@ body {
     text-shadow: none;
 }
 
-.text-espana {
-    background: linear-gradient(0deg, #AA151B 33%, #F1BF00 33%, #F1BF00 50%, #AA151B 50%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: none;
-}
-
 .title-right {
     display: block;
     margin-left: 120px;
@@ -250,7 +265,7 @@ body {
 }
 
 .card {
-    width: 33vw;   
+    width: 50vw;   
     height: 100vh; /* Altura completa del viewport */
     border-radius: 0px;
     overflow: hidden;
@@ -263,19 +278,14 @@ body {
 }
 
 .italiana {
+    margin-top: 40vh;
     margin-left: 0vw;
     z-index: 1;
 }
 
-.española {
-    margin-left: 33vw;
-    margin-top: 10vh; /* Espacio vertical antes de aparecer */
-    z-index: 2;
-}
-
 .adicionales {
-    margin-left: 66vw;
-    margin-top: 10vh; /* Espacio vertical antes de aparecer */
+    margin-left: 50vw;
+    margin-top: 20vh; /* Espacio vertical antes de aparecer */
     z-index: 3;
 }
 
@@ -1013,9 +1023,6 @@ RESPONSIVE
     .italiana {
         margin-top: 100px !important;
     }
-    .española {
-        margin-top: 20px !important;
-    }
     .adicionales {
         margin-top: 20px !important;
     }
@@ -1170,3 +1177,33 @@ RESPONSIVE
 .service-card:nth-child(2) { transition-delay: 0.1s; }
 .service-card:nth-child(3) { transition-delay: 0.2s; }
 .service-card:nth-child(4) { transition-delay: 0.3s; }
+
+/* ============================================
+   WHATSAPP BUTTON
+   ============================================ */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    cursor: none; /* Match custom cursor */
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-btn svg {
+    width: 35px;
+    height: 35px;
+}
