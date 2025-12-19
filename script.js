@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Select elements to animate
     const animatedElements = document.querySelectorAll(
-        '.hero-content, .cards-title h2, .about-card, .section-header, .service-card, .testimonial-carousel, .contact-card, .map-container, .faq-item, .footer-content'
+        '.cards-title h2, .about-card, .section-header, .service-card, .testimonial-carousel, .contact-card, .map-container, .faq-item, .footer-content'
     );
 
     animatedElements.forEach(el => {
@@ -332,13 +332,28 @@ function updateLanguage(lang) {
     // Update html lang attribute
     document.documentElement.lang = lang;
 
-    // Update WhatsApp Link
+    // Update WhatsApp Link & Footer Phone
     const whatsappBtn = document.getElementById('whatsapp-btn');
+    const footerPhone = document.getElementById('footer-phone');
+
     if (whatsappBtn) {
         if (lang === 'pt') {
             whatsappBtn.href = 'https://wa.me/5522999497665';
+            if (footerPhone) footerPhone.textContent = '+55 22 99949-7665';
         } else {
             whatsappBtn.href = 'https://wa.me/5491144087309';
+            if (footerPhone) footerPhone.textContent = '+54 9 11 4408-7309';
         }
     }
 }
+// ============================================
+// HERO ANIMATION ON LOAD
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        setTimeout(() => {
+            hero.classList.add('loaded');
+        }, 500);
+    }
+});

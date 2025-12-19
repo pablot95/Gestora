@@ -2,6 +2,3 @@ Quiere que este en 2 idiomas
 un wsp para cada idioma 
 un mail para ambos 
 
-fajas: 
-magenta
-rosa

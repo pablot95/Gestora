@@ -142,7 +142,13 @@ body {
     position: absolute;
     inset: 0;
     z-index: 2;
-    background: #37373749;
+    background: #0000007b;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.hero.loaded::before {
+    opacity: 1;
 }
 
 .hero-inner {
@@ -163,6 +169,12 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.hero.loaded .hero-content {
+    opacity: 1;
 }
 
 .hero h1 {
