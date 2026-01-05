@@ -152,23 +152,41 @@
             <!-- Contact Form -->
             <div class="contact-column">
                 <div class="contact-card" id="contact">
-                    <h3 data-i18n="contact-title">Empezá tu trámite hoy</h3>
+                    <h3 data-i18n="contact-title">Solicita una consulta gratuita</h3>
                     <form class="contact-form">
                         <div class="form-group">
-                            <input type="text" placeholder="Nombre completo" required data-i18n-placeholder="contact-name-placeholder">
+                            <input type="text" name="nombre" placeholder="Nombre" required data-i18n-placeholder="contact-name-placeholder">
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email" required data-i18n-placeholder="contact-email-placeholder">
+                            <input type="text" name="apellido" placeholder="Apellido" required data-i18n-placeholder="contact-lastname-placeholder">
                         </div>
                         <div class="form-group">
-                            <select>
-                                <option value="" data-i18n="contact-option-default">Tipo de trámite</option>
-                                <option value="italiana" data-i18n="contact-option-italian">Ciudadanía Italiana</option>
-                                <option value="otro" data-i18n="contact-option-other">Otro</option>
+                            <input type="email" name="email" placeholder="Correo electrónico" required data-i18n-placeholder="contact-email-placeholder">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="telefono" placeholder="Teléfono" required data-i18n-placeholder="contact-phone-placeholder">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="lugar_nacimiento_avo" placeholder="Lugar de nacimiento del antepasado italiano" data-i18n-placeholder="contact-place-avo-placeholder">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="anio_nacimiento_avo" placeholder="Año de nacimiento del antepasado italiano" data-i18n-placeholder="contact-year-avo-placeholder">
+                        </div>
+                        <div class="form-group">
+                            <select name="interes">
+                                <option value="" disabled selected data-i18n="contact-interest-default">¿En qué estás interesado?</option>
+                                <option value="via_materna" data-i18n="contact-interest-maternal">Ciudadanía por vía materna</option>
+                                <option value="via_paterna" data-i18n="contact-interest-paternal">Ciudadanía por vía paterna</option>
+                                <option value="matrimonio" data-i18n="contact-interest-marriage">Ciudadanía por matrimonio</option>
+                                <option value="busqueda_actas" data-i18n="contact-interest-search">Búsqueda de actas</option>
+                                <option value="otro" data-i18n="contact-interest-other">Otro</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Mensaje" rows="4" data-i18n-placeholder="contact-message-placeholder"></textarea>
+                            <input type="number" name="participantes" placeholder="Número de participantes en el juicio" data-i18n-placeholder="contact-participants-placeholder">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="mensaje" placeholder="Mensaje" rows="4" data-i18n-placeholder="contact-message-placeholder"></textarea>
                         </div>
                         <button type="submit" class="submit-btn" data-i18n="contact-submit">Enviar Consulta</button>
                     </form>
