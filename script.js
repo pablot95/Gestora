@@ -373,3 +373,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
     }
 });
+
+// ============================================
+// EMAILJS FORM SUBMISSION
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.querySelector('.contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get the submit button to update its state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+
+            // Send parameters: service_id, template_id, form_element
+            emailjs.sendForm('service_9rn4wjb', 'template_yrh2xur', this)
+                .then(() => {
+                    console.log('SUCCESS!');
+                    alert('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.');
+                    this.reset();
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                }, (error) => {
+                    console.log('FAILED...', error);
+                    alert('Ocurrió un error al enviar el mensaje. Por favor intenta nuevamente.');
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+});

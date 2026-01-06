@@ -254,7 +254,7 @@
             </div>
             <div class="footer-contact">
                 <h4 data-i18n="footer-contact-title">Contacto</h4>
-                <p>info@cittadinanza.com</p>
+                <p>contacto@italianosdelmundo.com.ar</p>
                 <p id="footer-phone">+54 9 11 4408-7309</p>
                 <p>Buenos Aires, Argentina</p>
                 <div class="socials">
@@ -271,6 +271,16 @@
 
     <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+                publicKey: "5ROAR8VddrQGoiqVP",
+            });
+        })();
+    </script>
 
     <!-- Lenis Smooth Scroll -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> 
