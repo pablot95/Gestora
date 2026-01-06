@@ -100,6 +100,17 @@ body {
     color: white;
 }
 
+.lang-flag {
+    display: none;
+    width: 24px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.lang-text {
+    display: inline-block;
+}
+
 .nav a {
     text-decoration: none;
     color: var(--dark);
@@ -1018,11 +1029,39 @@ RESPONSIVE
     }
 
     .header-content {
-        justify-content: center;
+        justify-content: space-between;
     }
 
     .nav {
-        display: none; /* Ocultamos menú en móvil por ahora */
+        display: flex;
+        gap: 0;
+    }
+
+    .nav a {
+        display: none;
+    }
+
+    .lang-switch {
+        gap: 5px;
+    }
+
+    .lang-text {
+        display: none;
+    }
+
+    .lang-flag {
+        display: block;
+        width: 32px; /* Un poco más grande para móvil */
+    }
+
+    .lang-btn {
+        border: none;
+        padding: 4px;
+        background: transparent !important; /* Forzar transparencia */
+    }
+    
+    .logo {
+        font-size: 20px; /* Ajuste para que quepa bien */
     }
 
     /* Hero */
