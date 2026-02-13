@@ -759,6 +759,42 @@ body.hovering .custom-cursor {
     transition: all 0.3s ease;
 }
 
+
+
+/* Sobrescribir estilos de la librería para que coincidan con el diseño */
+.iti {
+    width: 100%;
+}
+
+.iti__flag {
+    background-image: url("https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/img/flags.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .iti__flag {
+        background-image: url("https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/img/flags@2x.png");
+    }
+}
+
+.iti input {
+    width: 100%;
+    padding: 12px 20px;
+    padding-left: 90px !important; /* Espacio para la bandera y código */
+    border: 1px solid #eee;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background: #fcfcfc;
+    transition: all 0.3s ease;
+}
+
+.iti input:focus {
+    outline: none;
+    border-color: var(--green-italian);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(0, 146, 70, 0.1);
+}
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {

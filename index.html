@@ -11,11 +11,11 @@
     <meta name="author" content="Cittadinanza">
     <meta name="robots" content="index, follow">
     <!-- Reemplaza con tu dominio real -->
-    <link rel="canonical" href="https://tudominio.com/">
+    <link rel="canonical" href="https://www.italianosdelmundo.com.ar//">
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tudominio.com/">
+    <meta property="og:url" content="https://www.italianosdelmundo.com.ar/">
     <meta property="og:title" content="Ciudadanía Italiana: Asesoría Experta y Gestión Completa">
     <meta property="og:description" content="¿Buscás tu ciudadanía? Realizamos búsqueda de actas, armado de carpeta y presentaciones judiciales o consulares. Recuperá tus raíces europeas.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&h=600&fit=crop">
@@ -46,6 +46,10 @@
     </script>
 
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- International Telephone Input CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -218,12 +222,14 @@
                         <div class="form-group">
                             <input type="text" name="apellido" placeholder="Apellido" required data-i18n-placeholder="contact-lastname-placeholder">
                         </div>
+                        <div class="form-group phone-group-container">
+                            <input type="tel" id="telefono-input" name="telefono" required data-i18n-placeholder="contact-phone-placeholder">
+                            <input type="hidden" name="prefijo_pais" required id="prefijo_pais">
+                        </div>
                         <div class="form-group">
                             <input type="email" name="email" placeholder="Correo electrónico" required data-i18n-placeholder="contact-email-placeholder">
                         </div>
-                        <div class="form-group">
-                            <input type="tel" name="telefono" placeholder="Teléfono" required data-i18n-placeholder="contact-phone-placeholder">
-                        </div>
+
                         <div class="form-group">
                             <input type="text" name="lugar_nacimiento_avo" placeholder="Lugar de nacimiento del antepasado italiano" data-i18n-placeholder="contact-place-avo-placeholder">
                         </div>
@@ -331,6 +337,10 @@
 
     <!-- Lenis Smooth Scroll -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> 
+    
+    <!-- International Telephone Input JS -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    
     <script src="script.js"></script>
 </body>
 </html>

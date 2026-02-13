@@ -46,6 +46,43 @@ if (ctaButton) {
     });
 }
 
+// ============================================
+// INT'L TEL INPUT
+// ============================================
+const phoneInput = document.querySelector("#telefono-input");
+let iti; // Variable global para la instancia
+
+if (phoneInput) {
+    iti = window.intlTelInput(phoneInput, {
+        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+        separateDialCode: true,
+        preferredCountries: ["ar", "br", "it", "es", "us", "uy", "cl", "py", "bo", "pe", "co", "mx"],
+        initialCountry: "auto",
+        geoIpLookup: function(callback) {
+            fetch("https://ipapi.co/json")
+            .then(function(res) { return res.json(); })
+            .then(function(data) { callback(data.country_code); })
+            .catch(function() { callback("ar"); });
+        }
+    });
+
+    // Actualizar el input oculto con el código completo al enviar
+    const form = phoneInput.closest('form');
+    if (form) {
+        form.addEventListener('submit', function() {
+            const hiddenInput = document.getElementById('prefijo_pais');
+            if (hiddenInput && iti) {
+                // Guardamos el código de país (ej: +54) en el input oculto o el número completo
+                // Aquí guardamos el número completo formateado E.164 para que incluya el prefijo
+                // O si prefieres separar, podemos sacar el dialCode con iti.getSelectedCountryData().dialCode
+                
+                const countryData = iti.getSelectedCountryData();
+                hiddenInput.value = "+" + countryData.dialCode;
+            }
+        });
+    }
+}
+
 console.log('✅ Website loaded successfully!');
 
 // ============================================
