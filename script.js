@@ -1,6 +1,3 @@
-// ============================================
-// HEADER SCROLL BEHAVIOR
-// ============================================
 let lastScroll = 0;
 const header = document.getElementById('header');
 
@@ -14,11 +11,9 @@ window.addEventListener('scroll', () => {
     }
     
     if (currentScroll > lastScroll && currentScroll > 100) {
-        // Scrolling DOWN
         header.classList.add('hide');
         header.classList.remove('show');
     } else {
-        // Scrolling UP
         header.classList.remove('hide');
         header.classList.add('show');
     }
@@ -26,31 +21,18 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// ============================================
-// CARDS SCROLL ANIMATION
-// ============================================
 const cardsSection = document.querySelector('.cards-section');
 const cardsWrapper = document.querySelector('.cards-wrapper');
 
-
-// ============================================
-// CTA BUTTON CLICK
-// ============================================
 const ctaButton = document.querySelector('.cta-button');
 if (ctaButton) {
     ctaButton.addEventListener('click', () => {
-        // Aquí puedes agregar la funcionalidad del contacto
         alert('¡Pronto nos pondremos en contacto contigo!');
-        // O redireccionar a una sección de contacto
-        // window.location.href = '#contacto';
     });
 }
 
-// ============================================
-// INT'L TEL INPUT
-// ============================================
 const phoneInput = document.querySelector("#telefono-input");
-let iti; // Variable global para la instancia
+let iti;
 
 if (phoneInput) {
     iti = window.intlTelInput(phoneInput, {
@@ -66,16 +48,12 @@ if (phoneInput) {
         }
     });
 
-    // Actualizar el input oculto con el código completo al enviar
+
     const form = phoneInput.closest('form');
     if (form) {
         form.addEventListener('submit', function() {
             const hiddenInput = document.getElementById('prefijo_pais');
             if (hiddenInput && iti) {
-                // Guardamos el código de país (ej: +54) en el input oculto o el número completo
-                // Aquí guardamos el número completo formateado E.164 para que incluya el prefijo
-                // O si prefieres separar, podemos sacar el dialCode con iti.getSelectedCountryData().dialCode
-                
                 const countryData = iti.getSelectedCountryData();
                 hiddenInput.value = "+" + countryData.dialCode;
             }
@@ -85,9 +63,6 @@ if (phoneInput) {
 
 console.log('✅ Website loaded successfully!');
 
-// ============================================
-// TESTIMONIAL CAROUSEL
-// ============================================
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.testimonial-track');
     if (track) {
@@ -105,9 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(slide, 5000);
     }
 
-    // ============================================
-    // SCROLL ANIMATIONS
-    // ============================================
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -118,12 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Only animate once
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Select elements to animate
     const animatedElements = document.querySelectorAll(
         '.cards-title h2, .about-card, .section-header, .service-card, .testimonial-carousel, .contact-card, .map-container, .faq-item, .footer-content'
     );
@@ -133,65 +104,48 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    
-
-// ===================================
-// Protección contra inspección y copia
-// ===================================
-
-// Deshabilitar click derecho
 document.addEventListener('contextmenu', (e) => {
     e.preventDefault();
     return false;
 });
 
-// Deshabilitar selección de texto
 document.addEventListener('selectstart', (e) => {
     e.preventDefault();
     return false;
 });
 
-
-// Deshabilitar atajos de teclado para inspeccionar
 document.addEventListener('keydown', (e) => {
-    // F12
     if (e.key === 'F12') {
         e.preventDefault();
         return false;
     }
     
-    // Ctrl+Shift+I (Inspeccionar)
     if (e.ctrlKey && e.shiftKey && e.key === 'I') {
         e.preventDefault();
         return false;
     }
     
-    // Ctrl+Shift+J (Consola)
     if (e.ctrlKey && e.shiftKey && e.key === 'J') {
         e.preventDefault();
         return false;
     }
     
-    // Ctrl+Shift+C (Selector de elementos)
     if (e.ctrlKey && e.shiftKey && e.key === 'C') {
         e.preventDefault();
         return false;
     }
     
-    // Ctrl+U (Ver código fuente)
     if (e.ctrlKey && e.key === 'u') {
         e.preventDefault();
         return false;
     }
     
-    // Ctrl+S (Guardar página)
     if (e.ctrlKey && e.key === 's') {
         e.preventDefault();
         return false;
     }
 });
 
-// Deshabilitar arrastrar imágenes
 document.addEventListener('dragstart', (e) => {
     if (e.target.tagName === 'IMG') {
         e.preventDefault();
@@ -199,10 +153,7 @@ document.addEventListener('dragstart', (e) => {
     }
 });
 
-    // ============================================
-    // CUSTOM CURSOR
-    // ============================================
-    const cursor = document.querySelector('.custom-cursor');
+const cursor = document.querySelector('.custom-cursor');
     
     if (cursor) {
         document.addEventListener('mousemove', (e) => {
@@ -213,9 +164,6 @@ document.addEventListener('dragstart', (e) => {
     }
 });
 
-// ============================================
-// LANGUAGE SWITCHER
-// ============================================
 const translations = {
     es: {
         'nav-home': 'Inicio',
@@ -366,7 +314,6 @@ function updateLanguage(lang) {
     elements.forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang][key]) {
-            // Check if element has HTML content (like <br>)
             if (translations[lang][key].includes('<')) {
                 el.innerHTML = translations[lang][key];
             } else {
@@ -382,10 +329,8 @@ function updateLanguage(lang) {
         }
     });
     
-    // Update html lang attribute
     document.documentElement.lang = lang;
 
-    // Update WhatsApp Link & Footer Phone
     const whatsappBtn = document.getElementById('whatsapp-btn');
     const footerPhone = document.getElementById('footer-phone');
 
@@ -399,9 +344,7 @@ function updateLanguage(lang) {
         }
     }
 }
-// ============================================
-// HERO ANIMATION ON LOAD
-// ============================================
+
 document.addEventListener('DOMContentLoaded', () => {
     const hero = document.querySelector('.hero');
     if (hero) {
@@ -411,9 +354,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ============================================
-// EMAILJS FORM SUBMISSION
-// ============================================
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.querySelector('.contact-form');
     
@@ -421,14 +361,12 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
             
-            // Get the submit button to update its state
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.textContent;
             
             submitBtn.textContent = 'Enviando...';
             submitBtn.disabled = true;
 
-            // Send parameters: service_id, template_id, form_element
             emailjs.sendForm('service_9rn4wjb', 'template_yrh2xur', this)
                 .then(() => {
                     console.log('SUCCESS!');

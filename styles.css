@@ -1,6 +1,3 @@
-/* ============================================
-   RESET & BASE
-   ============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -28,9 +25,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ============================================
-   HEADER
-   ============================================ */
 .header {
     position: fixed;
     top: 20px;
@@ -75,7 +69,6 @@ body {
     align-items: center; /* Align items vertically */
 }
 
-/* Language Switcher */
 .lang-switch {
     display: flex;
     gap: 10px;
@@ -88,7 +81,7 @@ body {
     border: 1px solid var(--dark);
     padding: 5px 15px;
     border-radius: 20px;
-    cursor: none; /* Match custom cursor */
+    cursor: none;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     transition: all 0.3s ease;
@@ -122,9 +115,6 @@ body {
     color: var(--green-italian);
 }
 
-/* ============================================
-   HERO SECTION
-   ============================================ */
 .hero {
     position: relative;
     height: calc(100vh - 40px);
@@ -133,7 +123,7 @@ body {
     display: flex;
     align-items: center;
     z-index: 10;
-    background: #0f1115; /* Fallback */
+    background: #0f1115;
 }
 
 .hero video {
@@ -147,7 +137,6 @@ body {
     filter: contrast(0.75) saturate(0.75);
 }
 
-/* overlay with italian colors gradient */
 .hero::before {
     content: "";
     position: absolute;
@@ -189,7 +178,6 @@ body {
 }
 
 .hero h1 {
-
     font-size: clamp(28px, 4.5vw, 48px);
     line-height: 1.05;
     font-weight: 500;
@@ -199,7 +187,7 @@ body {
 }
 
 .hero p {
-    color: rgba(255,255,255,0.9);   
+    color: rgba(255,255,255,0.9);
     margin: 40px 0px;
     font-size: 18px;
     text-shadow: #0f1115 2px 2px 8px;
@@ -225,9 +213,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* ============================================
-   CARDS SECTION
-   ============================================ */
 .cards-section {
     background: white;
     position: relative;
@@ -235,19 +220,19 @@ body {
 }
 
 .cards-title {
-    position: absolute; /* Sacamos el contenedor del flujo para que no empuje las cards */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Ocupa toda la sección para permitir el sticky interno */
+    height: 100%;
     pointer-events: none;
     z-index: 10;
 }
 
 .cards-title h2 {
-    position: sticky; /* El título se pega dentro de su contenedor absoluto */
+    position: sticky;
     top: 60px;
-    margin-left: 160px; /* Ajuste de posición horizontal */
+    margin-left: 160px;
     font-size: 72px;
     font-weight: 400;
     font-family: 'Playfair Display', serif;
@@ -272,28 +257,26 @@ body {
     position: relative;
 }
 
-
-/* Contenedor Sticky */
 .cards-container {
     position: relative;
     width: 100%;
-    padding-top: 0px; /* Espacio visual para que las cards no tapen el título inmediatamente */
+    padding-top: 0px;
 }
 
 .cards-wrapper {
     position: relative;
     padding-bottom: 30px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 .card {
-    width: 50vw;   
-    height: 100vh; /* Altura completa del viewport */
+    width: 50vw;
+    height: 100vh;
     border-radius: 0px;
     overflow: hidden;
-    position: sticky; /* La magia del sticky */
-    top: 0px; /* Se pegan a esta altura del viewport */
+    position: sticky;
+    top: 0px;
     cursor: none;
     transition: transform 0.3s ease;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -308,11 +291,9 @@ body {
 
 .adicionales {
     margin-left: 50vw;
-    margin-top: 20vh; /* Espacio vertical antes de aparecer */
+    margin-top: 20vh;
     z-index: 3;
 }
-
-
 
 .card img {
     width: 100%;
@@ -372,16 +353,13 @@ body {
     border-color: white;
 }
 
-/* ============================================
-   ABOUT SECTION
-   ============================================ */
 .about-section {
     position: relative;
     min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -80px;  
+    margin-top: -80px;
     background-image: url('https://images.unsplash.com/photo-1529154036614-a60975f5c760?w=1600&q=80');
     background-attachment: fixed;
     background-position: center;
@@ -397,7 +375,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
@@ -411,7 +389,7 @@ body {
     font-size: 2rem;
     font-family: 'Playfair Display', serif;
     color: var(--green-italian);
-    margin-bottom: 20px;    
+    margin-bottom: 20px;
     line-height: 1;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
@@ -471,7 +449,6 @@ body {
     transition: transform 0.3s ease;
 }
 
-
 .team-member:hover img {
     transform: scale(1.05);
 }
@@ -484,13 +461,10 @@ body {
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-/* ============================================
-   CUSTOM CURSOR
-   ============================================ */
 body {
-    cursor: none; /* Hide default cursor */
+body {
+    cursor: none;
 }
-
 
 .custom-cursor {
     position: fixed;
@@ -505,19 +479,14 @@ body {
     transform: translate(-50%, -50%);
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     transition: width 0.2s, height 0.2s;
-
 }
 
-/* Hover effect for cursor */
 body.hovering .custom-cursor {
     width: 40px;
     height: 40px;
     opacity: 1;
 }
 
-/* ============================================
-   SERVICES DETAIL SECTION
-   ============================================ */
 .services-detail-section {
     padding: 40px 20px;
     background: white;
@@ -622,9 +591,6 @@ body.hovering .custom-cursor {
     font-size: 16px;
 }
 
-/* ============================================
-   TESTIMONIALS & CONTACT SECTION
-   ============================================ */
 .testimonials-contact-section {
     padding: 40px 20px;
     background: white;
@@ -640,7 +606,6 @@ body.hovering .custom-cursor {
     align-items: center;
 }
 
-/* Testimonials Column */
 .section-header-left {
     margin-bottom: 40px;
     text-align: left;
@@ -719,7 +684,6 @@ body.hovering .custom-cursor {
     color: #888;
 }
 
-/* Contact Column */
 .contact-card {
     background: white;
     padding: 50px;
@@ -759,9 +723,6 @@ body.hovering .custom-cursor {
     transition: all 0.3s ease;
 }
 
-
-
-/* Sobrescribir estilos de la librería para que coincidan con el diseño */
 .iti {
     width: 100%;
 }
@@ -779,7 +740,7 @@ body.hovering .custom-cursor {
 .iti input {
     width: 100%;
     padding: 12px 20px;
-    padding-left: 90px !important; /* Espacio para la bandera y código */
+    padding-left: 90px !important;
     border: 1px solid #eee;
     border-radius: 12px;
     font-family: 'Poppins', sans-serif;
@@ -821,9 +782,6 @@ body.hovering .custom-cursor {
     transform: translateY(-2px);
 }
 
-/* ============================================
-   FAQ SECTION
-   ============================================ */
 .faq-section {
     padding: 120px 20px;
     background: white;
@@ -871,9 +829,6 @@ details p {
     line-height: 1.6;
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
 .footer {
     background: #0f1115;
     color: white;
@@ -976,9 +931,6 @@ details p {
     text-decoration: underline;
 }
 
-/* ============================================
-RESPONSIVE
-   ============================================ */
 @media (max-width: 768px) {
     .header {
         width: calc(100% - 40px);
@@ -1071,9 +1023,6 @@ RESPONSIVE
     }
 }
 
-/* ============================================
-   MOBILE (MAX-WIDTH: 480px)
-   ============================================ */
 @media (max-width: 480px) {
     /* Header */
     .header {
@@ -1111,14 +1060,13 @@ RESPONSIVE
     .lang-btn {
         border: none;
         padding: 4px;
-        background: transparent !important; /* Forzar transparencia */
+        background: transparent !important;
     }
     
     .logo {
-        font-size: 20px; /* Ajuste para que quepa bien */
+        font-size: 20px;
     }
 
-    /* Hero */
     .hero {
         min-height: 400px;
     }
@@ -1143,7 +1091,6 @@ RESPONSIVE
         padding: 10px 30px;
     }
 
-    /* Cards Section */
     .cards-title {
         margin-top: 20px;
         margin-bottom: 30px;
@@ -1168,10 +1115,10 @@ RESPONSIVE
 
     .card {
         width: 100% !important;
-        height: 500px !important; /* Altura fija para que la imagen cubra todo */
+        height: 500px !important;
         margin-left: 0 !important;
         margin-top: 20px !important;
-        position: sticky; /* Disable sticky on mobile */
+        position: sticky;
         top: 20px;
         border-radius: 24px;
     }
@@ -1196,7 +1143,6 @@ RESPONSIVE
         margin-bottom: 15px;
     }
 
-    /* About Section */
     .about-section {
         min-height: 60vh;
         margin-top: 0;
@@ -1233,25 +1179,24 @@ RESPONSIVE
         margin-bottom: 30px;
     }
 
-    /* Services */
     .services-detail-section {
         padding: 60px 20px;
     }
 
     .section-header h2 {
         font-size: 32px;
-        word-wrap: break-word; /* Evita desbordes en palabras largas */
+        word-wrap: break-word;
     }
 
     .services-grid {
         grid-template-columns: 1fr;
         gap: 20px;
-        width: 100%; /* Asegura que no exceda el contenedor */
+        width: 100%;
     }
 
     .service-card {
         padding: 30px 20px;
-        width: 100%; /* Asegura que no exceda el grid */
+        width: 100%;
         position: sticky;
         top: 20px;
     }
@@ -1259,7 +1204,6 @@ RESPONSIVE
         display: none;
     }
 
-    /* Testimonials & Contact */
     .testimonials-contact-section {
         padding: 60px 20px;
     }
@@ -1277,7 +1221,7 @@ RESPONSIVE
 
     .testimonial-carousel {
         width: 100%;
-        max-width: 90vw; /* Previene desbordes del slider */
+        max-width: 90vw;
     }
 
     .testimonial-card {
@@ -1294,7 +1238,6 @@ RESPONSIVE
         font-size: 24px;
     }
 
-    /* Footer */
     .footer {
         padding: 40px 20px;
     }
@@ -1304,9 +1247,6 @@ RESPONSIVE
     }
 }
 
-/* ============================================
-   MAP & ANIMATIONS
-   ============================================ */
 .map-container {
     margin-top: 40px;
     border-radius: 24px;
@@ -1315,7 +1255,6 @@ RESPONSIVE
     border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Animation Classes */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(100px);
@@ -1328,15 +1267,10 @@ RESPONSIVE
     transform: translateY(0);
 }
 
-/* Stagger delays for grid items if needed, but JS observer handles individual entry well. 
-   We can add specific delays for children if we want a cascade effect. */
 .service-card:nth-child(2) { transition-delay: 0.1s; }
 .service-card:nth-child(3) { transition-delay: 0.2s; }
 .service-card:nth-child(4) { transition-delay: 0.3s; }
 
-/* ============================================
-   WHATSAPP BUTTON
-   ============================================ */
 .whatsapp-btn {
     position: fixed;
     bottom: 30px;
@@ -1351,7 +1285,7 @@ RESPONSIVE
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     transition: all 0.3s ease;
-    cursor: none; /* Match custom cursor */
+    cursor: none;
 }
 
 .whatsapp-btn:hover {
@@ -1364,9 +1298,6 @@ RESPONSIVE
     height: 35px;
 }
 
-/* ============================================
-   SLOGAN SECTION
-   ============================================ */
 .slogan-container {
     text-align: center;
     padding: 80px 20px;
@@ -1386,14 +1317,11 @@ RESPONSIVE
     letter-spacing: 1px;
 }
 
-/* ============================================
-   MAP FIXES
-   ============================================ */
 .map-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%;
     height: 0;
-    background: #f0f0f0; /* Provide a background while loading */
+    background: #f0f0f0;
 }
 
 .map-container iframe {
